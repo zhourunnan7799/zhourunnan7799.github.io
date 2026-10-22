@@ -1,0 +1,15 @@
+/* ==========================================================================
+   正文字体（无衬线版，备选）
+   用法：把 index.html 里的 font.css 换成 font_sans_serif.css
+   ========================================================================== */
+
+body {
+  background-color: #fff;
+  padding: 0px;
+  font: 16.0px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+        Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: #595959;
+  font-weight: 400;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
