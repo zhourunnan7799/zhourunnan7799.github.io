@@ -1,0 +1,108 @@
+/* ==========================================================================
+   custom.css —— 在本主题基础上加的东西（可以放心改这个文件）
+   1. 头像：铺满圆形，去掉主题默认的白边
+   2. 社交图标：用内联 SVG，不依赖任何 CDN
+   3. 侧栏目录（nav）
+   4. 占位 / 空状态文字
+   5. 项目条目的排版
+   ========================================================================== */
+
+html { scroll-behavior: smooth; }
+
+/* ---------- 1. 头像 ---------- */
+.image.avatar img {
+  width: 7.6em;
+  height: 7.6em;
+  padding: 0;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(4, 51, 97, 0.18);
+}
+
+/* ---------- 2. 社交图标（内联 SVG） ---------- */
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+}
+.social-icons a svg {
+  width: 1.12rem;
+  height: 1.12rem;
+  fill: currentColor;
+  display: block;
+}
+
+/* ---------- 2.5 侧栏里的单位 / 邮箱，232px 窄栏下排得更匀 ---------- */
+.affil {
+  display: inline-block;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  margin-top: 0.1rem;
+}
+email {
+  display: inline-block;
+  margin-top: 0.45rem;
+  word-break: break-all;
+}
+
+/* ---------- 3. 侧栏目录 ---------- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15rem 0.85rem;
+  margin: 1.7rem 0 0;
+  font-size: 0.86rem;
+}
+.nav a {
+  color: #8a8f98;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.nav a:hover { color: #39c; }
+
+@media (prefers-color-scheme: dark) {
+  .nav a { color: #9aa0ad; }
+  .nav a:hover { color: #3eb7f0; }
+  .image.avatar img { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55); }
+}
+
+/* 锚点跳转时给标题留点空隙 */
+section h2 { scroll-margin-top: 1.2rem; }
+
+/* ---------- 4. 占位 / 空状态 ---------- */
+.coming-soon {
+  color: #8a8f98;
+  font-style: italic;
+  margin: 0 0 20px;
+}
+
+/* ---------- 5. 项目条目（节奏和论文条目一致） ---------- */
+.project { margin: 0 0 18px; }
+.project .project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.project .project-title { font-weight: 600; }
+.project .project-time {
+  color: #8a8f98;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.project .project-desc { margin: 0.2rem 0 0; }
+
+/* ---------- 窄屏（手机 / 平板）微调 ---------- */
+@media print, screen and (max-width: 960px) {
+  /* 主题自带的移动端左右留白不稳，这里补上，避免文字贴边 */
+  body {
+    padding: 20px 18px 40px;
+    box-sizing: border-box;
+  }
+  .nav { justify-content: flex-start; margin-top: 1rem; }
+  .image.avatar img { width: 6.4em; height: 6.4em; }
+  section { padding: 18px 0 22px; }
+}
