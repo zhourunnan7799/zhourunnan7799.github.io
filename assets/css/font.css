@@ -1,0 +1,17 @@
+/* ==========================================================================
+   正文字体（衬线版，主题默认风格）
+   想换成无衬线，把 index.html 里的 font.css 改成 font_sans_serif.css 即可。
+   主题原本从 Google Fonts 引 Crimson Pro，国内访问不稳，这里改为本机优先，
+   有 Crimson Pro 就用，没有自动退到 Georgia，中文退到宋体系。
+   ========================================================================== */
+
+body {
+  background-color: #fff;
+  padding: 0px;
+  font: 16.0px/1.5 "Crimson Pro", "Charter", Georgia, "Times New Roman",
+        "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", SimSun, serif;
+  color: #595959;
+  font-weight: 400;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
